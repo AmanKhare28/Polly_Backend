@@ -11,8 +11,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect(process.env.DB_URI);
-
+try {
+  mongoose.connect(process.env.DB_URI);
+  console.log("connected to database");
+} catch (err) {
+  console.log(`cannot connect to database ${err}`);
+}
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
