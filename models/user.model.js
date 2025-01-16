@@ -42,10 +42,12 @@ userModel.pre("save", async function (next) {
   }
 });
 
-userModel.methods.comparePasswords = async (candidatePassword) => {
+userModel.methods.comparePasswords = async function (candidatePassword) {
   try {
-    return await bcrypt.compare(candidatePassword, this.password); // Compare the hashed password with the input
+    // `this.password` refers to the hashed password of the current user instance
+    return await bcrypt.compare(candidatePassword, this.password);
   } catch (err) {
+    console.error("Error comparing passwords:", err);
     throw new Error("Password comparison failed");
   }
 };
