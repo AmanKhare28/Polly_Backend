@@ -22,7 +22,7 @@ const userModel = new mongoose.Schema(
     polls: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: Poll,
+        ref: "Poll",
       },
     ],
   },
