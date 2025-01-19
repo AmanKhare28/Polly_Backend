@@ -37,6 +37,7 @@ const SignIn = async (req, res) => {
       username: currentUser.username,
       email,
       token,
+      id: currentUser._id,
     });
   } catch (err) {
     console.error("Error during sign-in:", err);

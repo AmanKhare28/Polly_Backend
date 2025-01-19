@@ -29,7 +29,9 @@ const SignUp = async (req, res) => {
 
     await user.save();
 
-    res.status(200).json({ message: "User Created", username, email, token });
+    res
+      .status(200)
+      .json({ message: "User Created", username, email, token, id: user._id });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Internal Server Error" });
