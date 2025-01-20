@@ -6,7 +6,7 @@ const createPoll = async (req, res) => {
 
   try {
     if (!title || !options || !(options.length >= 2)) {
-      res
+      return res
         .status(405)
         .json({ message: "title and atleast 2 optios are needed" });
     }
@@ -28,7 +28,7 @@ const createPoll = async (req, res) => {
     });
   } catch (err) {
     // Handle errors and return the error message with more details
-    res.status(500).json({
+    return res.status(500).json({
       message: "Internal server error",
       error: err.message || err, // Send the error message in the response for debugging
     });
