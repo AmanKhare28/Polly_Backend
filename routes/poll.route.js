@@ -6,5 +6,5 @@ import getPolls from "../controllers/getPolls.js";
 const router = express.Router();
 router.post("/new", createPoll);
 router.post("/toggle", togglePoll);
-router.get("/fetchall", getPolls);
+router.post("/fetchall", getPolls);
 export default router;
