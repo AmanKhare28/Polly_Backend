@@ -10,5 +10,5 @@ router.post("/new", createPoll);
 router.post("/toggle", togglePoll);
 router.post("/fetchall", getPolls);
 router.delete("/delete", deletePoll);
-router.get("/fetch", getPoll);
+router.post("/fetch", getPoll);
 export default router;
