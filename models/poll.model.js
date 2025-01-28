@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import User from "./user.model.js";
 
 const pollSchema = new mongoose.Schema(
   {
@@ -31,6 +30,7 @@ const pollSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    voters: { type: [String], default: [] },
   },
   { timestamps: true }
 );
