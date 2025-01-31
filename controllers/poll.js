@@ -25,6 +25,7 @@ const createPoll = async (req, res) => {
       title,
       description,
       options,
+      id: poll._id,
     });
   } catch (err) {
     // Handle errors and return the error message with more details
